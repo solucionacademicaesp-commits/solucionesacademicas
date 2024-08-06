@@ -38,28 +38,28 @@ const ContactOne = () => {
   const sendTask = (e) => {
     e.preventDefault()
     setLoading(true);
-    const str = date + " " + hour;
+    // const str = date + " " + hour;
 
-    const [dateValues, timeValues] = str.split(' ');
+    // const [dateValues, timeValues] = str.split(' ');
 
-    const [year, month, day] = dateValues.split('-');
-    const [hours, minutes] = timeValues.split(':');
+    // const [year, month, day] = dateValues.split('-');
+    // const [hours, minutes] = timeValues.split(':');
 
-    const dateHour = new Date(parseInt(year), parseInt(month - 1), parseInt(day), parseInt(hours), parseInt(minutes));
-    createCard(name, description, dateHour.toISOString(), email, phone, theme, matery, carrer, norm, pages, service, '63418945e805510139813e22', file)
-      .then(response => {
-        emailjs.sendForm('service_48aqg3p', 'template_8k0u3xp', e.target, 'Ha-mq6we2UcLFzs52')
-          .then((result) => {
-            console.log(result.text);
-            setAlertFlag(true);
-            setLoading(false);
-          }, (error) => {
-            console.log(error.text);
-            setAlertFlag(false);
-            setLoading(false);
-          });
-        reset();
-      })
+    // const dateHour = new Date(parseInt(year), parseInt(month - 1), parseInt(day), parseInt(hours), parseInt(minutes));
+    // createCard(name, description, dateHour.toISOString(), email, phone, theme, matery, carrer, norm, pages, service, '63418945e805510139813e22', file)
+    //   .then(response => {
+    //     emailjs.sendForm('service_48aqg3p', 'template_8k0u3xp', e.target, 'Ha-mq6we2UcLFzs52')
+    //       .then((result) => {
+    //         console.log(result.text);
+    //         setAlertFlag(true);
+    //         setLoading(false);
+    //       }, (error) => {
+    //         console.log(error.text);
+    //         setAlertFlag(false);
+    //         setLoading(false);
+    //       });
+    //     reset();
+    //   })
 
   }
   return (
