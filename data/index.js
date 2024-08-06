@@ -162,7 +162,7 @@ export const ServiceOneData = {
       image: serviceImage2,
       icon: "icon-fire",
       title: "Heating Services",
-      text: "There are many variations passages of lorem ipsum available but the majority have suffered alteration.",
+      text: "There are many variations passages of lorem ipsum.. available but the majority have suffered alteration.",
       button: {
         label: "LEARN MORE",
         url: "/service-details"
