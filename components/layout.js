@@ -36,7 +36,7 @@ const Layout = ({ PageTitle, children }) => {
         <meta name="keywords" content="Ghostwriting mit Erfolgsgarantie" />
         <meta name="author" content="Andi Martel Karpio" />
         <title>
-          {PageTitle} - Don’t worry, well do it for you
+          {PageTitle} - Soluciones Académicas
           {" "}
         </title>
       </Head>
