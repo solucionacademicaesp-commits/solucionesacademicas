@@ -7,7 +7,7 @@ const TableServices = () => {
     <table  className="table">
       <thead  className="thead-dark bg-personalized text-light" >
         <tr>
-          <th scope="col">Lektorat & Korrektorat</th>
+          <th scope="col">Corrección de Textos y Revisión</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -15,18 +15,18 @@ const TableServices = () => {
 
       <tbody>
         <tr>
-          <th scope="row">Lektorat</th>
-          <td>40 € / Seite</td>
+          <th scope="row">Corrección de Textos</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Fachlektorat	</th>
-          <td>45 € / Seite</td>
+          <th scope="row"> Revisión Especializada	</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Korrekturlesen</th>
-          <td>25 € / Seite</td>
+          <th scope="row"> Revisión de Pruebas</th>
+          <td></td>
         </tr>
       </tbody>
     </table>
@@ -34,50 +34,50 @@ const TableServices = () => {
     <table  className="table">
       <thead  className="thead-dark  bg-personalized text-light" >
         <tr>
-          <th scope="col">Andere Arbeitsarten</th>
+          <th scope="col">Otros Tipos de Trabajo</th>
           <th scope="col"></th>
         </tr>
       </thead>
        
       <tbody>
         <tr>
-          <th scope="row"> Projektarbeit</th>
-          <td>auf Anfrage</td>
+          <th scope="row"> Trabajo de Proyecto</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row">Forschungsarbeit </th>
-          <td>auf Anfrage</td>
+          <th scope="row">Trabajo de Investigación </th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Literaturarbeit</th>
-          <td>auf Anfrage</td>
+          <th scope="row"> Trabajo Literario</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row">Fallstudie </th>
-          <td>auf Anfrage</td>
+          <th scope="row">Estudio de Caso </th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row">Artikel </th>
-          <td>auf Anfrage</td>
+          <th scope="row">Artículo </th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Businessplan</th>
-          <td>auf Anfrage</td>
+          <th scope="row"> Plan de Negocios</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Bewerbung</th>
-          <td>50 € / Seite</td>
+          <th scope="row"> Solicitud de Empleo</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Biografie</th>
-          <td>50 € / Seite</td>
+          <th scope="row"> Biografía</th>
+          <td></td>
         </tr>
       </tbody>
     </table>
@@ -85,80 +85,80 @@ const TableServices = () => {
     <table  className="table">
       <thead  className="thead-dark  bg-personalized text-light" >
         <tr>
-          <th scope="col">Zusätzliche Leistungen</th>
+          <th scope="col">Servicios Adicionales</th>
           <th scope="col"></th>
         </tr>
       </thead>
        
       <tbody>
         <tr>
-          <th scope="row">Systematisches Umschreiben </th>
-          <td>auf Anfrage</td>
+          <th scope="row">Reescritura Sistemática</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Übersetzung</th>
-          <td>30 € / Seite</td>
+          <th scope="row"> Traducción</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row">Zusammenfassung </th>
-          <td>40 € / Seite</td>
+          <th scope="row">Resumen </th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row">Gliederungserstellung </th>
-          <td>70 € / Seite</td>
+          <th scope="row">Elaboración de Esquemas </th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Plagiatsprüfung</th>
-          <td>10 € / Seite</td>
+          <th scope="row"> Revisión de Plagio</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Themenfindung</th>
-          <td>65 € / Seite</td>
+          <th scope="row"> Búsqueda de Temas</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Formatierung</th>
-          <td>15 € / Seite</td>
+          <th scope="row"> Formato</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Literaturrecherche</th>
-          <td>78 € / Seite</td>
+          <th scope="row"> Investigación Bibliográfica</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Präsentation</th>
-          <td>35 € / Seite</td>
+          <th scope="row"> Presentación</th>
+          <td></td>
         </tr>
 
         <tr>
           <th scope="row"> Powerpoint</th>
-          <td>35 € / Seite</td>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Rede</th>
-          <td>40 € / Seite</td>
+          <th scope="row"> Discurso</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Erstellung von Grafiken & Tabellen</th>
-          <td>30 € / Grafik/Abbildung</td>
+          <th scope="row"> Creación de Gráficos y Tablas</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Interview transkribieren</th>
-          <td>5 € / Min</td>
+          <th scope="row"> Transcripción de Entrevistas</th>
+          <td></td>
         </tr>
 
         <tr>
           <th scope="row"> Coaching</th>
-          <td>65 € / Min</td>
+          <td></td>
         </tr>
         </tbody>
     </table>
@@ -166,25 +166,25 @@ const TableServices = () => {
     <table  className="table">
       <thead  className="thead-dark  bg-personalized text-light" >
         <tr>
-          <th scope="col">Statistik</th>
+          <th scope="col">Estadísticas</th>
           <th scope="col"></th>
         </tr>
       </thead>
        
       <tbody>
         <tr>
-          <th scope="row"> Statistische Analyse</th>
-          <td>54 € / Seite</td>
+          <th scope="row"> Análisis Estadístico</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> Statistische Auswertungen</th>
-          <td>650 € / Auswertung</td>
+          <th scope="row"> Evaluaciones Estadísticas</th>
+          <td></td>
         </tr>
 
         <tr>
-          <th scope="row"> SPSS-Auswertung</th>
-          <td>1000 € / Auswertung</td>
+          <th scope="row">Evaluación SPSS</th>
+          <td></td>
         </tr>
 
 
