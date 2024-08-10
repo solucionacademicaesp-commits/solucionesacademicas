@@ -22,7 +22,7 @@ const Service3 = () => {
           postTitle={t('SlideOneData_Service3')}
           description={t('Service3_Description')}
           request={t('navLinksData_Request')}
-          price="ab 40 € pro Seite"
+          price=""
         />
         <SponsorOne/>
         <Footer />

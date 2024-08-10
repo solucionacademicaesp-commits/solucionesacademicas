@@ -19,7 +19,7 @@ const ServiceDetails = ({
           <Col lg={8}>
             <div className="service_details_left">
               <Image src={imageDetail} alt="Service Details Image" />
-              <h1>{postTitle} ({price})</h1>
+              <h1>{postTitle} {price}</h1>
               <p>
                 {description}
               </p>
