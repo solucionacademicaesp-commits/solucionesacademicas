@@ -67,6 +67,62 @@ const TestimonialsOne = () => {
                 <Image src={avatar} alt={t('TestimonialOneData_Name5')} layout="responsive" />
               </div>
             </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name6')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name7')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name8')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name9')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name10')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name11')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name12')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name13')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name14')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name15')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="testi-thumb-img">
+                <Image src={avatar} alt={t('TestimonialOneData_Name16')} layout="responsive" />
+              </div>
+            </SwiperSlide>
+
           
         </Swiper>
         <Swiper
