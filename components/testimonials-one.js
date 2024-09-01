@@ -101,6 +101,61 @@ const TestimonialsOne = () => {
               <h4>{t('TestimonialOneData_Name5')}</h4>
               <span>{t('TestimonialOneData_Date5')}</span>
             </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content6')}</p>
+              <h4>{t('TestimonialOneData_Name6')}</h4>
+              <span>{t('TestimonialOneData_Date6')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content7')}</p>
+              <h4>{t('TestimonialOneData_Name7')}</h4>
+              <span>{t('TestimonialOneData_Date7')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content8')}</p>
+              <h4>{t('TestimonialOneData_Name8')}</h4>
+              <span>{t('TestimonialOneData_Date8')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content9')}</p>
+              <h4>{t('TestimonialOneData_Name9')}</h4>
+              <span>{t('TestimonialOneData_Date9')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content10')}</p>
+              <h4>{t('TestimonialOneData_Name10')}</h4>
+              <span>{t('TestimonialOneData_Date10')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content11')}</p>
+              <h4>{t('TestimonialOneData_Name11')}</h4>
+              <span>{t('TestimonialOneData_Date11')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content12')}</p>
+              <h4>{t('TestimonialOneData_Name12')}</h4>
+              <span>{t('TestimonialOneData_Date12')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content13')}</p>
+              <h4>{t('TestimonialOneData_Name13')}</h4>
+              <span>{t('TestimonialOneData_Date13')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content14')}</p>
+              <h4>{t('TestimonialOneData_Name14')}</h4>
+              <span>{t('TestimonialOneData_Date14')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content15')}</p>
+              <h4>{t('TestimonialOneData_Name15')}</h4>
+              <span>{t('TestimonialOneData_Date15')}</span>
+            </SwiperSlide>
+            <SwiperSlide className="testimonial_details">
+              <p>{t('TestimonialOneData_Content16')}</p>
+              <h4>{t('TestimonialOneData_Name16')}</h4>
+              <span>{t('TestimonialOneData_Date16')}</span>
+            </SwiperSlide>
          
           <div className="swiper-button-prev" id="testi-slide-prev">
             <i className="fa fa-angle-left"></i>
