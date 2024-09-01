@@ -22,6 +22,10 @@ import AboutFive from "@/components/about-five";
 
 const HomeOne = () => {
   const t = useTranslations('Index')
+  console.log(`EMAIL_USER:${process.env.EMAIL_USER} 
+    EMAIL_PASS:${process.env.EMAIL_PASS}
+    GMAIL_USER:${process.env.EMAIL_USER}
+    EMAIL_USER:${process.env.GMAIL_PASS}`);
   return (
     <MenuContextProvider>
       <Layout PageTitle={t('title')}>
