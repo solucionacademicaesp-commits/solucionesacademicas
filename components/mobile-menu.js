@@ -19,7 +19,7 @@ const MobileMenu = () => {
       <div className="mobile-menu__inner">
         <div className="mobile-menu__top">
           <h1 className="mobile-menu__logo">
-            <Link href="/">Wir schreiben für sie</Link>
+            <Link href="/">Soluciones Académicas</Link>
           </h1>
           <a href="#" className="mobile-menu__close" onClick={handleMenuClick}>
             <i className="fa fa-times"></i>

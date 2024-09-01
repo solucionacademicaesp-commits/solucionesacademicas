@@ -505,7 +505,7 @@ export const BlogTwoData = {
 };
 
 export const VideoOneData = {
-  title: "Wir schreiben für sie",
+  title: "Soluciones Académicas",
   id: "8DP4NgupAhI"
 };
 
