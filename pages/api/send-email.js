@@ -3,7 +3,9 @@ import nodemailer from 'nodemailer';
 // Utilizar las variables de entorno
 const emailUser = process.env.EMAIL_USER;
 const emailPass = process.env.EMAIL_PASS;
-const emailDestination = process.env.EMAIL_DESTINATION;
+const gmailUser = process.env.GMAIL_USER;
+const gmailPass = process.env.GMAIL_PASS;
+const emailDestination = `aymartel@gmail.com`;
 
 export default async (req, res) => {
   if (req.method === 'POST') {
