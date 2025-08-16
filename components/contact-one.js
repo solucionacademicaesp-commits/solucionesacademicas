@@ -70,7 +70,8 @@ ${description}
         },
         body: JSON.stringify({
           name: name,
-          message: detailedMessage
+          message: detailedMessage,
+          clientEmail: email
         }),
       });
 

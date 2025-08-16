@@ -27,7 +27,8 @@ const ContactThree = () => {
         },
         body: JSON.stringify({
           name: name,
-          message: `Email: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`
+          message: `Email: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`,
+          clientEmail: email
         }),
       });
 
