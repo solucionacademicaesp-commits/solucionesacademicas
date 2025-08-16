@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "@/components/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper";
+import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 import { Col, Container, Row } from "react-bootstrap";
 import { SlideOneData } from "@/data";
 
@@ -15,10 +18,10 @@ import service5 from "@/images/slider/service5.webp";
 import service6 from "@/images/slider/service6.webp";
 import { useTranslations } from "next-intl";
 
-SwiperCore.use([Autoplay, Navigation, EffectFade]);
 const SliderOne = () => {
   const t = useTranslations('Index');
   const mainSlideOptions = {
+    modules: [Autoplay, Navigation, EffectFade],
     slidesPerView: 1,
     loop: true,
     effect: "fade",

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import SwiperCore, { Autoplay, Thumbs, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Thumbs, Navigation } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 import { TestimonialOneData } from "@/data";
 import Image from "next/image";
 import avatar from "@/images/testimonial/avatar.webp";
 import { useTranslations } from 'next-intl';
-SwiperCore.use([Autoplay, Thumbs, Navigation]);
 
 const TestimonialsOne = () => {
   const { title, posts } = TestimonialOneData;
@@ -14,6 +16,7 @@ const TestimonialsOne = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const testimonialsThumbOptions = {
+    modules: [Autoplay],
     slidesPerView: 3,
     spaceBetween: 0,
     speed: 1400,
@@ -22,6 +25,7 @@ const TestimonialsOne = () => {
     }
   };
   const testimonialsOptions = {
+    modules: [Autoplay, Thumbs, Navigation],
     speed: 1400,
     mousewheel: true,
     slidesPerView: 1,

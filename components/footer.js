@@ -25,7 +25,7 @@ const Footer = () => {
                   {FooterBottomData.social.map(({ icon, url }, index) => (
                     <div className="socialLinks"key={`footer-social-link-${index}`}>
                     <li >
-                      <Link href={url} passHref>
+                      <Link href={url}>
                         <i className={`fa ${icon}`}></i>
                       </Link>
                     </li>

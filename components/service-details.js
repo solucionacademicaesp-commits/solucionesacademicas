@@ -24,8 +24,8 @@ const ServiceDetails = ({
                 {description}
               </p>
               
-                <Link href="/request" passHref>
-                <div  className="btn-yellow">{request}</div>
+                <Link href="/request" className="btn-yellow">
+                  {request}
                 </Link>
 
             </div>

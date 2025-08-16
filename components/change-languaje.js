@@ -12,15 +12,12 @@ const ChangeLanguaje = () => {
         <Link
             href={router.asPath}
             locale={router.locale === 'es' ? 'en' : 'es'}
-            passHref
+            className="button_for_change_languaje"
+            style={{ display: 'inline-block', border: 'none', cursor: 'pointer' }}
         >
-            <button className="button_for_change_languaje">
-
-
-                <Image
-                    src={router.locale === 'es' ? flag_eng : flag_esp} alt="Spain flag" layout="fixed" width="25px" height="15px"
-                />
-            </button>
+            <Image
+                src={router.locale === 'es' ? flag_eng : flag_esp} alt="Spain flag" layout="fixed" width="25px" height="15px"
+            />
         </Link>
     );
 };

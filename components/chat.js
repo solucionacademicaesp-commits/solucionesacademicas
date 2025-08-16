@@ -8,7 +8,7 @@ const Chat = () => {
         {`
         (function () {
         var options = {
-            whatsapp: "+34604344914", // WhatsApp number
+            whatsapp: "+34651903243", // WhatsApp number
             call_to_action: "", // Call to action
             button_color: "#009bde", // Color of button
             position: "left", // Position may be 'right' or 'left'

@@ -9,24 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.6.2",
-    "@fontsource/josefin-sans": "^4.5.0",
-    "axios": "^0.27.2",
-    "bootstrap": "5.1.1",
-    "next": "11.1.2",
-    "next-intl": "^1.0.1",
-    "react": "17.0.2",
-    "react-bootstrap": "^2.0.0-rc.0",
-    "react-countup": "^6.0.0",
-    "react-dom": "17.0.2",
-    "react-google-recaptcha-v3": "^1.10.0",
-    "react-modal-video": "^1.2.8",
-    "react-scroll": "^1.8.4",
+    "@emailjs/browser": "^4.4.1",
+    "@fontsource/josefin-sans": "^5.1.1",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "next": "^14.2.18",
+    "next-intl": "^2.21.0",
+    "nodemailer": "^6.9.16",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-modal-video": "^2.0.2",
+    "react-scroll": "^1.9.0",
     "react-visibility-sensor": "^5.1.1",
-    "swiper": "^7.0.6"
+    "sharp": "^0.34.3",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.18"
   }
 }
