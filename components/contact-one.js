@@ -35,32 +35,60 @@ const ContactOne = () => {
   const [loading, setLoading] = useState(false);
 
 
-  const sendTask = (e) => {
+  const sendTask = async (e) => {
     e.preventDefault()
     setLoading(true);
-    // const str = date + " " + hour;
+    
+    try {
+      // Crear mensaje detallado con toda la información del formulario
+      const detailedMessage = `
+Solicitud de Servicio Académico:
 
-    // const [dateValues, timeValues] = str.split(' ');
+INFORMACIÓN PERSONAL:
+- Nombre: ${name}
+- Email: ${email}
+- Teléfono: ${phone}
+- Fecha requerida: ${date}
+- Hora: ${hour}
 
-    // const [year, month, day] = dateValues.split('-');
-    // const [hours, minutes] = timeValues.split(':');
+DETALLES ACADÉMICOS:
+- Materia: ${matery}
+- Carrera: ${carrer}
+- Servicio: ${service}
+- Tema: ${theme}
+- Páginas: ${pages}
+- Normas: ${norm}
 
-    // const dateHour = new Date(parseInt(year), parseInt(month - 1), parseInt(day), parseInt(hours), parseInt(minutes));
-    // createCard(name, description, dateHour.toISOString(), email, phone, theme, matery, carrer, norm, pages, service, '63418945e805510139813e22', file)
-    //   .then(response => {
-    //     emailjs.sendForm('service_48aqg3p', 'template_8k0u3xp', e.target, 'Ha-mq6we2UcLFzs52')
-    //       .then((result) => {
-    //         console.log(result.text);
-    //         setAlertFlag(true);
-    //         setLoading(false);
-    //       }, (error) => {
-    //         console.log(error.text);
-    //         setAlertFlag(false);
-    //         setLoading(false);
-    //       });
-    //     reset();
-    //   })
+DESCRIPCIÓN:
+${description}
+      `;
 
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          message: detailedMessage
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Solicitud enviada exitosamente');
+        setAlertFlag(true);
+        setLoading(false);
+        reset();
+      } else {
+        console.log('Error al enviar la solicitud');
+        setAlertFlag(false);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log('Error:', error);
+      setAlertFlag(false);
+      setLoading(false);
+    }
   }
   return (
     <section className="contact_form_area contact_us section_padding">

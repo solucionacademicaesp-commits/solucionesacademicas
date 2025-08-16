@@ -3,17 +3,17 @@ import nodemailer from 'nodemailer';
 // Utilizar las variables de entorno
 const emailUser = process.env.EMAIL_USER;
 const emailPass = process.env.EMAIL_PASS;
-const gmailUser = process.env.GMAIL_USER;
-const gmailPass = process.env.GMAIL_PASS;
-const emailDestination = `aymartel@gmail.com`;
+const emailDestination = process.env.EMAIL_USER; // Usar la misma dirección como destino
 
 export default async (req, res) => {
   if (req.method === 'POST') {
     const { name, message } = req.body;
 
-    // Configurar el transporte
+    // Configurar el transporte para servidor SMTP de Hostinger
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Usar el servicio de Gmail
+      host: 'smtp.hostinger.com', // Servidor SMTP de Hostinger
+      port: 465, // Puerto 465 con SSL/TLS habilitado
+      secure: true, // true para 465 (SSL), false para otros puertos
       auth: {
         user: emailUser,
         pass: emailPass,

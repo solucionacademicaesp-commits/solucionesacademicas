@@ -15,20 +15,35 @@ const ContactThree = () => {
   const [alertFlag, setAlertFlag] = useState(false);
   const [pacient, setPacient] = useState("");
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     console.log(values);
-    emailjs.sendForm('service_48aqg3p', 'template_8k0u3xp', e.target, 'Ha-mq6we2UcLFzs52')
-      .then((result) => {
-        console.log(result.text);
-        setAlertFlag(true);
-      }, (error) => {
-        console.log(error.text);
-        setAlertFlag(false);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          message: `Email: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`
+        }),
       });
-    setPacient(name)
-    setAlertFlag(true)
-    reset();
+
+      if (response.ok) {
+        console.log('Correo enviado exitosamente');
+        setAlertFlag(true);
+        setPacient(name);
+        reset();
+      } else {
+        console.log('Error al enviar el correo');
+        setAlertFlag(false);
+      }
+    } catch (error) {
+      console.log('Error:', error);
+      setAlertFlag(false);
+    }
   };
 
   return (
