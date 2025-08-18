@@ -32,12 +32,15 @@ const ContactOne = () => {
   const [values, handleInputChange, reset] = useForm(initialForm);
   const { name, email, phone, description, date, hour, norm, pages, service, carrer, theme, matery, attachment } = values;
   const [alertFlag, setAlertFlag] = useState(false);
+  const [errorFlag, setErrorFlag] = useState(false);
   const [loading, setLoading] = useState(false);
 
 
   const sendTask = async (e) => {
     e.preventDefault()
     setLoading(true);
+    setAlertFlag(false);
+    setErrorFlag(false);
     
     try {
       // Crear mensaje detallado con toda la información del formulario
@@ -78,16 +81,19 @@ ${description}
       if (response.ok) {
         console.log('Solicitud enviada exitosamente');
         setAlertFlag(true);
+        setErrorFlag(false);
         setLoading(false);
         reset();
       } else {
         console.log('Error al enviar la solicitud');
         setAlertFlag(false);
+        setErrorFlag(true);
         setLoading(false);
       }
     } catch (error) {
       console.log('Error:', error);
       setAlertFlag(false);
+      setErrorFlag(true);
       setLoading(false);
     }
   }
@@ -259,22 +265,43 @@ ${description}
                 {/* <input type="file" onChange={handleChangeInput} /> */}
               </div>
               <div className="col-md-6 alignrigth">
-                {loading?<LoadingSpinner/>:null}
-                <button className="btn-yellow" value="SUBMIT NOW">
-                  {t('ContactThree_Submit')}
-                </button>
+                {loading ? (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'flex-end' }}>
+                    <LoadingSpinner />
+                    <span>Enviando solicitud...</span>
+                  </div>
+                ) : (
+                  <button className="btn-yellow" type="submit" disabled={loading}>
+                    {t('ContactThree_Submit')}
+                  </button>
+                )}
               </div>
             </div>
 
           </form>
           <br />
-          {alertFlag ?
-            <div className="alert alert-secondary alert-dismissible fade show col-md-6" role="alert">
+          
+          {/* Mensaje de éxito */}
+          {alertFlag && (
+            <div className="alert alert-success alert-dismissible fade show col-md-8" role="alert">
+              <strong>✅ ¡Solicitud enviada correctamente!</strong><br />
               {t('ContactOne_Confirmation')}
-              <button type="button" className="close-button-contact " onClick={() => { setAlertFlag(false) }}>
-                x
+              <button type="button" className="close-button-contact" onClick={() => { setAlertFlag(false) }}>
+                ×
               </button>
-            </div> : <span className=""></span>}
+            </div>
+          )}
+          
+          {/* Mensaje de error */}
+          {errorFlag && (
+            <div className="alert alert-danger alert-dismissible fade show col-md-8" role="alert">
+              <strong>❌ Error al enviar la solicitud</strong><br />
+              Hubo un problema al enviar tu solicitud. Por favor, revisa los datos e inténtalo de nuevo.
+              <button type="button" className="close-button-contact" onClick={() => { setErrorFlag(false) }}>
+                ×
+              </button>
+            </div>
+          )}
         </div>
 
       </div>

@@ -2,6 +2,8 @@ import { useForm } from "hooks/useForm";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import emailjs from '@emailjs/browser';
+import LoadingSpinner from "./loading-spinner";
+
 const ContactThree = () => {
   const t = useTranslations('Index');
   const initialForm = {
@@ -13,11 +15,15 @@ const ContactThree = () => {
   const [values, handleInputChange, reset] = useForm(initialForm);
   const { name, email, phone, message } = values;
   const [alertFlag, setAlertFlag] = useState(false);
+  const [errorFlag, setErrorFlag] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [pacient, setPacient] = useState("");
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log(values);
+    setLoading(true);
+    setAlertFlag(false);
+    setErrorFlag(false);
     
     try {
       const response = await fetch('/api/send-email', {
@@ -35,15 +41,21 @@ const ContactThree = () => {
       if (response.ok) {
         console.log('Correo enviado exitosamente');
         setAlertFlag(true);
+        setErrorFlag(false);
         setPacient(name);
+        setLoading(false);
         reset();
       } else {
         console.log('Error al enviar el correo');
         setAlertFlag(false);
+        setErrorFlag(true);
+        setLoading(false);
       }
     } catch (error) {
       console.log('Error:', error);
       setAlertFlag(false);
+      setErrorFlag(true);
+      setLoading(false);
     }
   };
 
@@ -116,18 +128,40 @@ const ContactThree = () => {
                   onChange={handleInputChange}
                   required
                 ></textarea>
-                <button className="btn-yellow" value="SUBMIT NOW">
-                  {t('ContactThree_Submit')}
-                </button>
+                {loading ? (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <LoadingSpinner />
+                    <span>Enviando...</span>
+                  </div>
+                ) : (
+                  <button className="btn-yellow" type="submit" disabled={loading}>
+                    {t('ContactThree_Submit')}
+                  </button>
+                )}
               </form>
               <br />
-              {alertFlag ?
-                <div className="alert alert-secondary alert-dismissible fade show" role="alert">
-                  <strong>{pacient}</strong> {t('ContactOne_Confirmation')}
-                  <button type="button" className="close-button-contact " onClick={() => { setAlertFlag(false) }}>
-                    x
+              
+              {/* Mensaje de éxito */}
+              {alertFlag && (
+                <div className="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>✅ ¡Enviado correctamente!</strong><br />
+                  <strong>{pacient}</strong>, {t('ContactOne_Confirmation')}
+                  <button type="button" className="close-button-contact" onClick={() => { setAlertFlag(false) }}>
+                    ×
                   </button>
-                </div> : <span className=""></span>}
+                </div>
+              )}
+              
+              {/* Mensaje de error */}
+              {errorFlag && (
+                <div className="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>❌ Error al enviar</strong><br />
+                  Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.
+                  <button type="button" className="close-button-contact" onClick={() => { setErrorFlag(false) }}>
+                    ×
+                  </button>
+                </div>
+              )}
             </div>
 
           </div>
