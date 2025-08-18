@@ -144,7 +144,7 @@ const mailTemplate = (name, message) => `
         <div class="header">
           <div class="logo-container">
             <div style="text-align: center; margin-bottom: 15px;">
-              <img src="https://solucionesacademicas.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.ffa67b7f.png&w=384&q=75" 
+              <img src="https://www.solucionesacademicas.net/logwhite.png" 
                    alt="Soluciones Académicas" 
                    style="width: 120px; height: auto; filter: brightness(0) invert(1);" />
             </div>
@@ -289,7 +289,7 @@ const confirmationTemplate = (name) => `
         <div class="header">
           <div class="logo-container">
             <div style="text-align: center; margin-bottom: 15px;">
-              <img src="https://solucionesacademicas.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.ffa67b7f.png&w=384&q=75" 
+              <img src="https://www.solucionesacademicas.net/logwhite.png" 
                    alt="Soluciones Académicas" 
                    style="width: 120px; height: auto; filter: brightness(0) invert(1);" />
             </div>
