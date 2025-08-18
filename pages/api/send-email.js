@@ -25,7 +25,7 @@ export default async (req, res) => {
       const companyMailOptions = {
         from: emailUser,
         to: emailDestination,
-        subject: `Nuevo mensaje de ${name}`,
+        subject: `Nueva solicitud de ${name}`,
         html: mailTemplate(name, message),
       };
 
@@ -38,7 +38,7 @@ export default async (req, res) => {
           from: emailUser,
           to: clientEmail,
           subject: "Confirmación de recepción - Soluciones Académicas",
-          html: confirmationTemplate(name),
+          html: confirmationTemplate(name, message),
         };
 
         await transporter.sendMail(clientMailOptions);
@@ -75,7 +75,7 @@ const mailTemplate = (name, message) => `
           color: #333;
         }
         .email-container {
-          max-width: 600px;
+          max-width: 700px;
           margin: 0 auto;
           background-color: white;
           border-radius: 8px;
@@ -109,14 +109,45 @@ const mailTemplate = (name, message) => `
         .client-name {
           font-size: 18px;
           font-weight: 600;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
+          text-align: center;
+          color: #333;
         }
         .message-content {
           background-color: #f8f9fa;
-          padding: 20px;
-          border-radius: 6px;
+          padding: 25px;
+          border-radius: 8px;
           margin: 20px 0;
           border-left: 4px solid #1e90ff;
+        }
+        .info-section {
+          margin: 15px 0;
+        }
+        .info-section h4 {
+          color: #1e90ff;
+          margin-bottom: 10px;
+          font-size: 16px;
+        }
+        .info-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+          margin: 15px 0;
+        }
+        .info-item {
+          background-color: #e7f3ff;
+          padding: 12px;
+          border-radius: 6px;
+          border-left: 3px solid #1e90ff;
+        }
+        .info-label {
+          font-weight: 600;
+          color: #1e90ff;
+          font-size: 14px;
+        }
+        .info-value {
+          color: #333;
+          margin-top: 5px;
         }
         .footer {
           text-align: center;
@@ -137,6 +168,16 @@ const mailTemplate = (name, message) => `
           font-weight: 600;
           color: #1e90ff;
         }
+        .priority-badge {
+          display: inline-block;
+          background-color: #ff6b6b;
+          color: white;
+          padding: 5px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
       </style>
     </head>
     <body>
@@ -152,13 +193,17 @@ const mailTemplate = (name, message) => `
         </div>
         
         <div class="content">
-          <div class="greeting">NUEVO MENSAJE</div>
+          <div class="greeting">NUEVA SOLICITUD RECIBIDA</div>
           
-          <div class="client-name">${name}</div>
+          <div class="client-name">Cliente: ${name}</div>
+          
+          <div class="priority-badge">NUEVA SOLICITUD - REQUIERE ATENCIÓN INMEDIATA</div>
           
           <div class="message-content">
-            <p><strong>Hemos recibido un nuevo mensaje con los siguientes datos:</strong></p>
-            <p>${message.replace(/\n/g, "<br>")}</p>
+            <h3 style="color: #1e90ff; margin-top: 0;">Detalles de la Solicitud:</h3>
+            <div style="white-space: pre-line; line-height: 1.8; font-size: 15px;">
+              ${message}
+            </div>
           </div>
           
           <div class="date">
@@ -177,7 +222,8 @@ const mailTemplate = (name, message) => `
         </div>
         
         <div class="footer">
-          <p>Este mensaje ha sido enviado desde el formulario de contacto del sitio web.</p>
+          <p>Esta solicitud ha sido enviada desde el formulario del sitio web.</p>
+          <p><strong>IMPORTANTE:</strong> Responder dentro de las próximas 24 horas.</p>
           <p>© 2024 Soluciones Académicas - Todos los derechos reservados</p>
         </div>
       </div>
@@ -185,7 +231,7 @@ const mailTemplate = (name, message) => `
   </html>
 `;
 
-const confirmationTemplate = (name) => `
+const confirmationTemplate = (name, message) => `
   <html>
     <head>
       <meta charset="UTF-8">
@@ -199,7 +245,7 @@ const confirmationTemplate = (name) => `
           color: #333;
         }
         .email-container {
-          max-width: 600px;
+          max-width: 700px;
           margin: 0 auto;
           background-color: white;
           border-radius: 8px;
@@ -282,6 +328,19 @@ const confirmationTemplate = (name) => `
           font-weight: 600;
           color: #1e90ff;
         }
+        .summary-box {
+          background-color: #e7f3ff;
+          padding: 20px;
+          border-radius: 8px;
+          margin: 20px 0;
+          border-left: 4px solid #1e90ff;
+        }
+        .summary-title {
+          color: #1e90ff;
+          font-weight: 600;
+          margin-bottom: 15px;
+          font-size: 16px;
+        }
       </style>
     </head>
     <body>
@@ -297,34 +356,41 @@ const confirmationTemplate = (name) => `
         </div>
         
         <div class="content">
-          <div class="greeting">HOLA</div>
+          <div class="greeting">¡HOLA ${name.toUpperCase()}!</div>
           
-          <div class="client-name">${name}</div>
+          <div class="client-name">Tu solicitud ha sido recibida correctamente</div>
           
           <div class="message-content">
-            <p><strong>Hemos recibido tu solicitud con los siguientes datos:</strong></p>
-            <p>Queremos confirmarte que tu mensaje ha llegado correctamente a nuestro equipo de Soluciones Académicas.</p>
+            <p><strong>Confirmamos la recepción de tu solicitud con los siguientes datos:</strong></p>
+            <div class="summary-box">
+              <div class="summary-title">Resumen de tu solicitud:</div>
+              <div style="white-space: pre-line; line-height: 1.6; font-size: 14px; color: #555;">
+                ${message}
+              </div>
+            </div>
           </div>
           
           <p><strong>¿Qué sigue ahora?</strong></p>
           <div class="steps-list">
             <ul>
-              <li>✅ Tu solicitud está siendo revisada por nuestro equipo especializado</li>
-              <li>📞 Nos comunicaremos contigo en las próximas <strong>24 horas</strong></li>
-              <li>💼 Te proporcionaremos una propuesta personalizada para tu proyecto académico</li>
+              <li>Tu solicitud está siendo revisada por nuestro equipo especializado</li>
+              <li>Nos comunicaremos contigo en las próximas <strong>24 horas</strong></li>
+              <li>Te proporcionaremos una propuesta personalizada para tu proyecto académico</li>
+              <li>Si es necesario, solicitaremos información adicional para optimizar tu servicio</li>
             </ul>
           </div>
           
           <div class="contact-info">
-            <h4>📧 Información de Contacto:</h4>
+            <h4>Información de Contacto:</h4>
             <p><strong>Email:</strong> info@solucionesacademicas.net</p>
             <p><strong>Respuesta garantizada:</strong> Dentro de 24 horas</p>
+            <p><strong>Horario de atención:</strong> Lunes a Viernes de 9:00 AM a 6:00 PM</p>
           </div>
           
           <p>Gracias por confiar en <strong>Soluciones Académicas</strong>. Estamos comprometidos en brindarte el mejor servicio y apoyo para tu éxito académico.</p>
           
           <div class="date">
-            Fecha de página: ${new Date().toLocaleString("es-ES", {
+            Fecha de envío: ${new Date().toLocaleString("es-ES", {
               year: "numeric",
               month: "2-digit",
               day: "2-digit",

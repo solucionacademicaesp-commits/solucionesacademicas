@@ -26,6 +26,19 @@ const ContactThree = () => {
     setErrorFlag(false);
     
     try {
+      // Crear mensaje detallado con toda la información del formulario
+      const detailedMessage = `
+Consulta General:
+
+INFORMACIÓN PERSONAL:
+- Nombre: ${name}
+- Email: ${email}
+- Teléfono: ${phone}
+
+MENSAJE:
+${message}
+      `;
+
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -33,7 +46,7 @@ const ContactThree = () => {
         },
         body: JSON.stringify({
           name: name,
-          message: `Email: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`,
+          message: detailedMessage,
           clientEmail: email
         }),
       });
