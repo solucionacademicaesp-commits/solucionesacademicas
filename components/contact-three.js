@@ -70,8 +70,10 @@ const ContactThree = () => {
                 <div className="contact_location_map contact_location_call">
                   <span className="icon-contact_call"></span>
                   <p>
-                  domyhomeworkea@gmail.com <br />
+                  info@solucionesacademicas.net  <br />
                     {t('phone-enterprise')}
+                    <br />
+                    +34603010923
                   </p>
                 </div>
               </div>
