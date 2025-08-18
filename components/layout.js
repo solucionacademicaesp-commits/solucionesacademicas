@@ -32,13 +32,24 @@ const Layout = ({ PageTitle, children }) => {
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-        <meta itemProp="description" name="description" content={t('Footer_Text')} />
-        <meta name="keywords" content="Ghostwriting mit Erfolgsgarantie" />
-        <meta name="author" content="Andi Martel Karpio" />
-        <title>
-          {PageTitle} - Soluciones Académicas
-          {" "}
-        </title>
+        <meta name="description" content={t('Footer_Text')} />
+        <meta name="keywords" content="Soluciones académicas, trabajos universitarios, tesis, ensayos académicos" />
+        <meta name="author" content="Soluciones Académicas" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${PageTitle} - Soluciones Académicas`} />
+        <meta property="og:description" content={t('Footer_Text')} />
+        <meta property="og:site_name" content="Soluciones Académicas" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${PageTitle} - Soluciones Académicas`} />
+        <meta name="twitter:description" content={t('Footer_Text')} />
+        
+        <title>{PageTitle} - Soluciones Académicas</title>
       </Head>
       <div id="wrapper">{children}</div>
 
